@@ -19,7 +19,7 @@ class Chronometer {
 
 
   getSeconds() {
-    return (this.currentTime / 100) % 60
+    return Math.floor((this.currentTime / 100) % 60)
   }
 
 
@@ -51,9 +51,9 @@ class Chronometer {
     let mm = this.computeTwoDigitNumber(this.getMinutes());
     let ss = this.computeTwoDigitNumber(this.getSeconds());
     let cs = this.computeTwoDigitNumber(this.getCentiseconds());
-   
-    
-    return  `${mm}:${ss}.${cs}`;
+    let fs = mm + ":" + ss + "." + cs
+    console.log (cs,mm,ss)
+    return  fs
   }
 }
 
